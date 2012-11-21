@@ -1,0 +1,27 @@
+From 14e30531e31e480cbd5f51761acf9d372e2eb0bf Mon Sep 17 00:00:00 2001
+From: Thomas Ackermann <th.acker@arcor.de>
+Date: Sat, 22 Sep 2012 19:30:39 +0200
+Subject: [PATCH] Disable pitchscreen
+
+---
+ firmware/export/config.h | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/firmware/export/config.h b/firmware/export/config.h
+index ec69e53..4360478 100644
+--- a/firmware/export/config.h
++++ b/firmware/export/config.h
+@@ -1133,6 +1133,10 @@ Lyre prototype 1 */
+ #define HAVE_PITCHCONTROL
+ #endif
+ 
++#ifndef NO_AIWA
++#undef HAVE_PITCHCONTROL
++#endif
++
+ /* enable logging messages to disk*/
+ #if CONFIG_PLATFORM == PLATFORM_NATIVE  && !defined(SIMULATOR) && !defined(BOOTLOADER) \
+     && !defined(__PCTOOL__) && (CONFIG_CODEC == SWCODEC)
+-- 
+1.8.0.msysgit.0
+

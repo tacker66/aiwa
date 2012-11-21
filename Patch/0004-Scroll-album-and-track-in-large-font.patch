@@ -1,0 +1,57 @@
+From df4731021b0dde2a682ced650e7af64e10904600 Mon Sep 17 00:00:00 2001
+From: Thomas Ackermann <th.acker@arcor.de>
+Date: Tue, 27 Mar 2012 21:28:55 +0200
+Subject: [PATCH] Scroll album and track in large font.
+
+---
+ themes/Aiwa/config.cfg   |  2 +-
+ themes/Aiwa/wps/Aiwa.wps | 10 +++++-----
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/themes/Aiwa/config.cfg b/themes/Aiwa/config.cfg
+index 8d4ee8c..c092048 100644
+--- a/themes/Aiwa/config.cfg
++++ b/themes/Aiwa/config.cfg
+@@ -15,7 +15,7 @@ car adapter mode: on
+ backlight filters first keypress: on
+ scroll speed: 10
+ scroll delay: 300
+-bidir limit: 150
++bidir limit: 300
+ scroll step: 3
+ show files: all
+ show filename exts: on
+diff --git a/themes/Aiwa/wps/Aiwa.wps b/themes/Aiwa/wps/Aiwa.wps
+index da647ec..f94ddf1 100644
+--- a/themes/Aiwa/wps/Aiwa.wps
++++ b/themes/Aiwa/wps/Aiwa.wps
+@@ -3,7 +3,7 @@
+ # Platform: SanDisk Sansa Clip+
+ # V1.0
+ # Tacker
+-# 27.02.12
++# 27.03.12
+ #
+ 
+ # Sansa Clip+ screen is 128x64x1 pixel
+@@ -36,13 +36,13 @@
+ %V(117,4,11,14,2)
+ %?mp<%xd(Aa)|%xd(Ab)|%xd(Ac)|%xd(Ad)|%xd(Ae)>%?mh<%xd(Af)>
+ 
+-# viewport for scrolling artist and album name
++# viewport for scrolling artist
+ %V(0,14,-,16,3)
+-%ac%s%?id<%id|%d(1)> - %?ia<%ia|%d(2)>
++%ac%s%?ia<%ia|%d(2)>
+ 
+-# viewport for scrolling track title
++# viewport for scrolling album name and track title
+ %V(0,26,-,27,4)
+-%ac%s%?it<%it|%fn>
++%ac%s%?id<%id|%d(1)> - %?it<%it|%fn>
+ 
+ # viewport for song info
+ %V(0,54,-,-,2)
+-- 
+1.8.0.msysgit.0
+

@@ -1,0 +1,117 @@
+From 1b05c309ba68734309f8534aec68ee6ed3f76928 Mon Sep 17 00:00:00 2001
+From: Thomas <th.acker@arcor.de>
+Date: Thu, 12 Jan 2012 20:33:26 +0100
+Subject: [PATCH] Aiwa mode
+
+---
+ apps/gui/wps.c         | 12 ++++++++++--
+ apps/menus/main_menu.c |  2 +-
+ apps/misc.c            |  4 ++--
+ themes/Aiwa/config.cfg | 30 ++++++++++++++++++++++++++++++
+ 4 files changed, 43 insertions(+), 5 deletions(-)
+ create mode 100644 themes/Aiwa/config.cfg
+
+diff --git a/apps/gui/wps.c b/apps/gui/wps.c
+index 1acd00d..cd4327f 100644
+--- a/apps/gui/wps.c
++++ b/apps/gui/wps.c
+@@ -877,7 +877,11 @@ long gui_wps_show(void)
+                     }
+                 }
+                 else
+-                    ffwd_rew(ACTION_WPS_SEEKFWD);
++                {
++                    // hack for aiwa mode
++                    change_dir(1);
++                    // ffwd_rew(ACTION_WPS_SEEKFWD);
++                }
+                 last_right = last_left = 0;
+                 break;
+             /* fast rewind 
+@@ -903,7 +907,11 @@ long gui_wps_show(void)
+                     }
+                 }
+                 else
+-                    ffwd_rew(ACTION_WPS_SEEKBACK);
++                {
++                    // hack for aiwa mode
++                    change_dir(-1);
++                    // ffwd_rew(ACTION_WPS_SEEKBACK);
++                }
+                 last_left = last_right = 0;
+                 break;
+ 
+diff --git a/apps/menus/main_menu.c b/apps/menus/main_menu.c
+index f4b7543..8a21fa6 100644
+--- a/apps/menus/main_menu.c
++++ b/apps/menus/main_menu.c
+@@ -172,7 +172,7 @@ static const char* info_getname(int selected_item, void *data,
+     switch (selected_item)
+     {
+         case INFO_VERSION:
+-            snprintf(buffer, buffer_len, "%s: %s", 
++            snprintf(buffer, buffer_len, "%s: %s tacker", 
+                      str(LANG_VERSION), rbversion);
+             break;
+ 
+diff --git a/apps/misc.c b/apps/misc.c
+index d7d4bdd..8cf6a8d 100644
+--- a/apps/misc.c
++++ b/apps/misc.c
+@@ -699,7 +699,7 @@ int show_logo( void )
+     char version[32];
+     int font_h, font_w;
+ 
+-    snprintf(version, sizeof(version), "Ver. %s", rbversion);
++    snprintf(version, sizeof(version), "Ver. %s tacker", rbversion);
+ 
+     lcd_clear_display();
+ #if defined(SANSA_CLIP) || defined(SANSA_CLIPV2) || defined(SANSA_CLIPPLUS)
+@@ -719,7 +719,7 @@ int show_logo( void )
+     lcd_setfont(FONT_UI);
+ 
+ #else
+-    char *rockbox = "  ROCKbox!";
++    char *rockbox = "Rockbox tacker!";
+ 
+     lcd_clear_display();
+     lcd_double_height(true);
+diff --git a/themes/Aiwa/config.cfg b/themes/Aiwa/config.cfg
+new file mode 100644
+index 0000000..b669f4d
+--- /dev/null
++++ b/themes/Aiwa/config.cfg
+@@ -0,0 +1,30 @@
++# .cfg file created by rockbox -120111 - http://www.rockbox.org
++
++volume: -10
++contrast: 21
++backlight timeout: 30
++backlight timeout plugged: on
++statusbar: off
++scrollbar: off
++scrollbar width: 5
++volume display: numeric
++battery display: numeric
++show icons: off
++idle poweroff: 30
++car adapter mode: on
++backlight filters first keypress: on
++scroll speed: 10
++scroll delay: 300
++bidir limit: 150
++scroll step: 3
++show files: all
++show filename exts: on
++folder navigation: on
++replaygain type: off
++fms: /.rockbox/wps/Aiwa.fms
++font: /.rockbox/fonts/18-Adobe-Helvetica-Bold.fnt
++wps: /.rockbox/wps/Aiwa.wps
++sbs: /.rockbox/wps/Aiwa.sbs
++start in screen: wps
++list_accel_wait: 2
++sleeptimer duration: 5
+-- 
+1.8.0.msysgit.0
+

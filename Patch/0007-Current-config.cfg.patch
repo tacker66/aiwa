@@ -1,0 +1,24 @@
+From 2db05b0116eeff0cda9a6ec052ca6410b0961b3f Mon Sep 17 00:00:00 2001
+From: Thomas Ackermann <th.acker@arcor.de>
+Date: Fri, 12 Oct 2012 18:52:56 +0200
+Subject: [PATCH] Current config.cfg
+
+---
+ themes/Aiwa/config.cfg | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/themes/Aiwa/config.cfg b/themes/Aiwa/config.cfg
+index da137ea..86afd16 100644
+--- a/themes/Aiwa/config.cfg
++++ b/themes/Aiwa/config.cfg
+@@ -1,6 +1,6 @@
+ # .cfg file created by rockbox -120406 - http://www.rockbox.org
+ 
+-volume: -5
++volume: 1
+ contrast: 21
+ backlight timeout: 10
+ backlight timeout plugged: on
+-- 
+1.8.0.msysgit.0
+

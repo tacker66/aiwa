@@ -1,0 +1,64 @@
+From 051c39b709115fc34003c7e31136547e5676ac00 Mon Sep 17 00:00:00 2001
+From: Thomas Ackermann <th.acker@arcor.de>
+Date: Sat, 5 May 2012 18:57:13 +0200
+Subject: [PATCH] Display improvements after real world testing.
+
+---
+ themes/Aiwa/config.cfg   | 10 +++++-----
+ themes/Aiwa/wps/Aiwa.wps |  6 +++---
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/themes/Aiwa/config.cfg b/themes/Aiwa/config.cfg
+index c092048..da137ea 100644
+--- a/themes/Aiwa/config.cfg
++++ b/themes/Aiwa/config.cfg
+@@ -1,6 +1,6 @@
+-# .cfg file created by rockbox -120111 - http://www.rockbox.org
++# .cfg file created by rockbox -120406 - http://www.rockbox.org
+ 
+-volume: 0
++volume: -5
+ contrast: 21
+ backlight timeout: 10
+ backlight timeout plugged: on
+@@ -13,9 +13,9 @@ show icons: off
+ idle poweroff: 30
+ car adapter mode: on
+ backlight filters first keypress: on
+-scroll speed: 10
+-scroll delay: 300
+-bidir limit: 300
++scroll speed: 12
++scroll delay: 0
++bidir limit: 0
+ scroll step: 3
+ show files: all
+ show filename exts: on
+diff --git a/themes/Aiwa/wps/Aiwa.wps b/themes/Aiwa/wps/Aiwa.wps
+index f94ddf1..b76c6bd 100644
+--- a/themes/Aiwa/wps/Aiwa.wps
++++ b/themes/Aiwa/wps/Aiwa.wps
+@@ -1,9 +1,9 @@
+ #
+ # Theme Name: Aiwa 
+ # Platform: SanDisk Sansa Clip+
+-# V1.0
++# V1.1
+ # Tacker
+-# 27.03.12
++# 05.05.12
+ #
+ 
+ # Sansa Clip+ screen is 128x64x1 pixel
+@@ -42,7 +42,7 @@
+ 
+ # viewport for scrolling album name and track title
+ %V(0,26,-,27,4)
+-%ac%s%?id<%id|%d(1)> - %?it<%it|%fn>
++%ac%s* %?id<%id|%d(1)> * %?it<%it|%fn>
+ 
+ # viewport for song info
+ %V(0,54,-,-,2)
+-- 
+1.8.0.msysgit.0
+
