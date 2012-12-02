@@ -1,0 +1,38 @@
+From 0f5b69071c8fc82a8cf2e240e1df0bf37d15f19e Mon Sep 17 00:00:00 2001
+From: Thomas Ackermann <th.acker66@arcor.de>
+Date: Sun, 2 Dec 2012 16:59:27 +0100
+Subject: [PATCH] Disable autorepeat for skipping directories
+
+---
+ apps/action.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/apps/action.c b/apps/action.c
+index 2492a7d..a92bcfa 100644
+--- a/apps/action.c
++++ b/apps/action.c
+@@ -234,8 +234,8 @@ static int get_action_worker(int context, int timeout,
+     if (button == BUTTON_NONE || button & (SYS_EVENT|BUTTON_MULTIMEDIA))
+     {
+         /* no button pressed so no point in waiting for release */
+-        if (button == BUTTON_NONE)
+-            wait_for_release = false;
++        //if (button == BUTTON_NONE)
++        //    wait_for_release = false;
+         return button;
+     }
+ 
+@@ -253,8 +253,8 @@ static int get_action_worker(int context, int timeout,
+      * button events repeatedly before the first repeat (as in BUTTON_REPEAT).
+      * These cannot be distinguished from the very first touch
+      * but there's nothing we can do about it here */
+-    if ((button & (BUTTON_REPEAT|BUTTON_REL)) == 0)
+-        wait_for_release = false;
++    //if ((button & (BUTTON_REPEAT|BUTTON_REL)) == 0)
++    //    wait_for_release = false;
+ 
+     /* Don't send any buttons through untill we see the release event */
+     if (wait_for_release)
+-- 
+1.8.0.msysgit.0
+

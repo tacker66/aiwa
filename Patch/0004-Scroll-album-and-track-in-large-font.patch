@@ -1,4 +1,4 @@
-From df4731021b0dde2a682ced650e7af64e10904600 Mon Sep 17 00:00:00 2001
+From fc99e17de3d57d74418f4094e939e2c81667a58e Mon Sep 17 00:00:00 2001
 From: Thomas Ackermann <th.acker@arcor.de>
 Date: Tue, 27 Mar 2012 21:28:55 +0200
 Subject: [PATCH] Scroll album and track in large font.
