@@ -1,0 +1,49 @@
+#
+# Theme Name: Aiwa 
+# Platform: SanDisk Sansa Clip+
+# V1.1
+# Tacker
+# 05.05.12
+#
+
+# Sansa Clip+ screen is 128x64x1 pixel
+
+# hide status bar
+%wd
+
+# preload images
+%xl(I,battery.bmp,0,0,6)
+%xl(A,play.bmp,0,0,6)
+
+# load fonts
+%Fl(2,11-Adobe-Helvetica-Squashed.fnt,100)
+%Fl(3,12-Adobe-Helvetica-Bold.fnt,100)
+%Fl(4,27-Adobe-Helvetica-Bold.fnt,100)
+
+# viewport for battery
+%V(0,4,28,14,2)
+%?bp<%xd(Ia)|%al%bl%%>
+
+# viewport for clock
+%V(28,4,72,14,2)
+%ac%?St(time format)<%cH:%cM|%cl:%cM>
+
+# viewport for volume
+%V(100,4,17,14,2)
+%ar%pv
+
+# viewport for playback mode and lock
+%V(117,4,11,14,2)
+%?mp<%xd(Aa)|%xd(Ab)|%xd(Ac)|%xd(Ad)|%xd(Ae)>%?mh<%xd(Af)>
+
+# viewport for scrolling artist
+%V(0,14,-,16,3)
+%ac%s%?ia<%ia|%d(2)>
+
+# viewport for scrolling album name and track title
+%V(0,26,-,27,4)
+%ac%s* %?id<%id|%d(1)> * %?it<%it|%fn>
+
+# viewport for song info
+%V(0,54,-,-,2)
+%al%pc%ac%pp/%pe%ar%pt

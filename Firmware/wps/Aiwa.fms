@@ -1,0 +1,22 @@
+﻿#
+# Theme Name: Aiwa 
+# Platform: SanDisk Sansa Clip+
+# V1.0
+# Tacker
+# 14.01.12
+#
+
+# hide status bar
+%wd
+
+%V(0,2,-,-,1)
+%s%al%?tm<%tf MHz|%Ti.%?Tn<%Tf MHz|%Tn>>
+%V(0,18,-,-,1)
+%al%?Tf<%Tf|%tf> MHz %s%ar%?Tn<%Tn|%?tm<Scan|Preset>>
+
+%V(0,34,-,-,1)
+%s%ac%?ts<%Sx(Stereo)|%Sx(Mono)>
+
+%V(0,50,-,-,1)
+%pb
+

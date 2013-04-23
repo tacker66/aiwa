@@ -1,0 +1,17 @@
+﻿#
+# Theme Name: Aiwa 
+# Platform: SanDisk Sansa Clip+
+# V1.0
+# Tacker
+# 14.01.12
+#
+
+# hide status bar
+%wd
+
+%Vi(-,0,2,-,-,1)
+
+%xl(A,empt.bmp,0,0)
+
+%V(0,0,-,2,1)
+%xd(A)

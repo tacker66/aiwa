@@ -1,0 +1,17 @@
+Target: sansaclipplus
+Target id: 66
+Target define: -DSANSA_CLIPPLUS
+Memory: 8
+CPU: arm
+Manufacturer: as3525
+Version: f2d7135M-121202
+Binary: rockbox.sansa
+Binary size: 555192
+Voice format: 400
+Actual size: 555184
+RAM usage: 858272
+Features: alarm:crossfade:dircache:flash_storage:lcd_bitmap:lcd_invert:multivolume:multidrive_usb:quickscreen:radio:recording:recording_swcodec:recording_mic:rtc:swcodec:tagcache:tc_ramcache:charging:large_plugin_buffer:ab_repeat_buttons:lcd_flip:lcd_contrast:usb_power:usbstack
+gcc: arm-elf-eabi-gcc (GCC) 4.4.4
+ld: GNU ld (GNU Binutils) 2.20.1.20100303
+Host gcc: gcc (GCC) 3.4.4 (cygming special, gdc 0.12, using dmd 0.125)
+Host system: CYGWIN_NT-6.1-WOW64
